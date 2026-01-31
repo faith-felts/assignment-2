@@ -38,33 +38,48 @@ function avgArr(arr) {
 }
 
 
+// define function to read a list of numbers from a file
+// if the file contains non-numeric values, they will be converted to NaN
+function readNumbersFromFile(filePath) {
+    // Read the entire file as text
+    const content = fs.readFileSync(filePath, 'utf8');
+    // Split content into lines and convert each line to a number
+    const lines = content.split('\n');
+    const numbers = lines.map(line => parseFloat(line));
+
+    // Test: if any number is NaN, the entire result should be NaN
+    for (let i = 0; i < numbers.length; i++) {
+        if (isNaN(numbers[i])) {
+            return [NaN];
+        }
+    }
+
+    return numbers;
+}
+
 
 // find the sum of all numbers in file using sumArr
 function fileSum(filePath) {
-    // Read the entire file as text
-    const content = fs.readFileSync(filePath, 'utf8').split('\n').map(Number);
-    return sumArr(content);
+    let numbers = readNumbersFromFile(filePath);
+    return sumArr(numbers);
 }
 
 // find the highest number in file using findHighest
 function fileHighest(filePath) {
-    // Read the entire file as text
-    const content = fs.readFileSync(filePath, 'utf8').split('\n').map(Number);
-    return findHighest(content);
+    let numbers = readNumbersFromFile(filePath);
+    return findHighest(numbers);
 }
 
 // find the lowest number in file using findLowest
 function fileLowest(filePath) {
-    // Read the entire file as text
-    const content = fs.readFileSync(filePath, 'utf8').split('\n').map(Number);
-    return findLowest(content);
+    let numbers = readNumbersFromFile(filePath);
+    return findLowest(numbers);
 }
 
 // find the average of all numbers in file using avgArr
 function fileAvg(filePath) {
-    // Read the entire file as text
-    const content = fs.readFileSync(filePath, 'utf8').split('\n').map(Number);
-    return avgArr(content);
+    let numbers = readNumbersFromFile(filePath);
+    return avgArr(numbers);
 }
 
 // test with data from data/sample-numbers.txt
