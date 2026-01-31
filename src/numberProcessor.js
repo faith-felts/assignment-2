@@ -1,3 +1,4 @@
+const fs = require('fs');
 
 // find sum of all numbers in an array
 function sumArr(arr) {
@@ -65,3 +66,20 @@ function fileAvg(filePath) {
     const content = fs.readFileSync(filePath, 'utf8').split('\n').map(Number);
     return avgArr(content);
 }
+
+// test with data from data/sample-numbers.txt
+try {
+    console.log("Sum:", fileSum('data/sample-numbers.txt'));
+    console.log("Highest:", fileHighest('data/sample-numbers.txt'));
+    console.log("Lowest:", fileLowest('data/sample-numbers.txt'));
+    console.log("Average:", fileAvg('data/sample-numbers.txt'));
+} 
+catch (err) {
+    console.error("Error processing sample-numbers.txt: " + err.message);
+}
+
+// export functions for use in other files
+module.exports.fileAvg = fileAvg;
+module.exports.fileLowest = fileLowest;
+module.exports.fileHighest = fileHighest;
+module.exports.fileSum = fileSum;
