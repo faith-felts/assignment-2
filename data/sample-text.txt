@@ -1,0 +1,4 @@
+No content for the test file sample-text.txt was provided for the assignment.
+But this file
+has 4
+lines. And 22 words.

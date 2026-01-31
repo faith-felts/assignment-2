@@ -63,3 +63,30 @@ function fileLinesCount(filePath) {
 }
 
 
+// test with data from data/quotes.txt and data/sample-text.txt
+
+//test with quotes.txt
+try {
+    console.log("Words in quotes.txt: " + fileWordsCount('data/quotes.txt'));
+    console.log("Longest word in quotes.txt: " + fileLongestWord('data/quotes.txt'));
+    console.log("Lines in quotes.txt: " + fileLinesCount('data/quotes.txt'));
+}
+catch (err) {
+    console.error("Error processing quotes.txt: " + err.message);
+}
+
+// test with sample-text.txt
+try {
+    console.log("Words in sample-text.txt: " + fileWordsCount('data/sample-text.txt'));
+    console.log("Longest word in sample-text.txt: " + fileLongestWord('data/sample-text.txt'));
+    console.log("Lines in sample-text.txt: " + fileLinesCount('data/sample-text.txt'));
+}
+catch (err) {
+    console.error("Error processing sample-text.txt: " + err.message);
+}
+
+
+// Export the file functions so they can be used in other files
+module.exports.fileWordsCount = fileWordsCount;
+module.exports.fileLongestWord = fileLongestWord;
+module.exports.fileLinesCount = fileLinesCount;

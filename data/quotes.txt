@@ -1,0 +1,1 @@
+No content for the test file quotes.txt was provided for the assignment and    this is all on one line. But seperated  with different amounts of spaces.
