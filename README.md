@@ -1,18 +1,53 @@
-# backend-development-workspace
+# Assignment #2: File Processing Toolkit
 
-## Overview
-This is the central hub for my application development class work. It serves as a digital notebook where I will organize coursework, track progress, store reference materials, and document what I learn throughout the semester. Each unit in the course has its own corresponding folder to keep projects easy to revisit.
+This repository contains your starter code for the File Processing Toolkit assignment.
 
-## Learning Objectives 
-- Build a foundational understanding of backend development concepts
-- Learn proper REST API creation and usage
-- Develop backend scripts and applications using best practices
-- Properly maintain a GitHub repository
-- Create maintainable backend applications
+## Getting Started
 
-## Usage Plan
-- Document backend resources and reference materials
-- Organize projects and assignments by unit
-- Track development progress and changes 
+1. Clone this repository to your local machine
+2. Navigate to the project directory
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
+## Assignment Overview
 
+You will build two main scripts:
+
+- **textAnalyzer.js** - Analyzes text files (word count, longest word, line count)
+- **numberProcessor.js** - Processes number files (sum, average, highest, lowest)
+
+## Data Files
+
+Your repository includes sample data files to work with:
+
+- `data/sample-text.txt` - Text content for analysis
+- `data/sample-numbers.txt` - Numbers for processing
+- `data/quotes.txt` - Programming quotes for text analysis
+
+## Testing
+
+Write Jest tests for your functions:
+
+```bash
+npm test
+```
+
+## File Structure
+
+```
+src/
+├── textAnalyzer.js
+├── numberProcessor.js
+└── fileToolkit.js
+
+tests/
+├── textAnalyzer.test.js
+└── numberProcessor.test.js
+
+data/
+├── sample-text.txt
+├── sample-numbers.txt
+└── quotes.txt
+```
